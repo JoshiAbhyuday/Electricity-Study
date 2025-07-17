@@ -1,0 +1,266 @@
+﻿TWFE Model -  27 nations
+> summary(twfe_model)
+OLS estimation, Dep. Var.: Electricity_Consumption
+Observations: 2,349
+Fixed-effects: Country: 27,  Date: 87
+Standard-errors: Clustered (Country) 
+            Estimate Std. Error   t value Pr(>|t|)    
+treat_post -0.067699   0.234229 -0.289030 0.774851    
+Price       0.003673   0.001750  2.099502 0.045629 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 1.43237     Adj. R2: 0.982362
+                Within R2: 0.003864
+
+
+
+
+Placebo Results -  27 Nations
+> summary(placebo_model)
+OLS estimation, Dep. Var.: Electricity_Consumption
+Observations: 2,349
+Fixed-effects: Country: 27,  Date: 87
+Standard-errors: Clustered (Country) 
+                    Estimate Std. Error   t value Pr(>|t|)    
+treat_post_placebo -0.060912   0.219353 -0.277690 0.783447    
+Price               0.003710   0.001701  2.180614 0.038451 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 1.43238     Adj. R2: 0.982362
+                Within R2: 0.003856
+
+
+TWFE Results: Neighbouring Nations
+> summary(twfe_model)
+OLS estimation, Dep. Var.: Electricity_Consumption
+Observations: 783
+Fixed-effects: Country: 9,  Date: 87
+Standard-errors: Clustered (Country) 
+            Estimate Std. Error   t value Pr(>|t|) 
+treat_post -0.029143   0.475544 -0.061283  0.95264 
+Price       0.002661   0.003046  0.873540  0.40782 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 2.05997     Adj. R2: 0.967859
+                Within R2: 0.001063
+
+
+Placebo: Neighbouring Countries
+> summary(placebo_model)
+OLS estimation, Dep. Var.: Electricity_Consumption
+Observations: 783
+Fixed-effects: Country: 9,  Date: 87
+Standard-errors: Clustered (Country) 
+                   Estimate Std. Error  t value Pr(>|t|) 
+treat_post_placebo 0.000946   0.419170 0.002258  0.99825 
+Price              0.002670   0.002946 0.906387  0.39121 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 2.05998     Adj. R2: 0.967859
+                Within R2: 0.001052
+
+
+
+
+
+
+Event Study - 27 countries
+> summary(event_study_model)
+OLS estimation, Dep. Var.: Electricity_Consumption
+Observations: 2,349
+Fixed-effects: Country: 27,  Date: 87
+Standard-errors: Clustered (Country) 
+                              Estimate Std. Error   t value   Pr(>|t|)    
+rel_time_factor::-53:treated -0.170993   0.938318 -0.182234 8.5681e-01    
+rel_time_factor::-52:treated -0.712159   0.823935 -0.864339 3.9531e-01    
+rel_time_factor::-51:treated -0.130893   1.015222 -0.128931 8.9840e-01    
+rel_time_factor::-50:treated -0.478849   0.448920 -1.066670 2.9593e-01    
+rel_time_factor::-49:treated  0.399841   0.162569  2.459517 2.0879e-02 *  
+rel_time_factor::-48:treated  1.074661   0.307002  3.500504 1.6940e-03 ** 
+rel_time_factor::-47:treated  2.973678   0.917815  3.239954 3.2624e-03 ** 
+rel_time_factor::-46:treated  1.645746   0.419445  3.923625 5.7037e-04 ***
+rel_time_factor::-45:treated  1.173932   0.239923  4.892963 4.4575e-05 ***
+rel_time_factor::-44:treated  0.106184   0.361786  0.293500 7.7147e-01    
+rel_time_factor::-43:treated -0.447182   0.545228 -0.820174 4.1957e-01    
+rel_time_factor::-42:treated -0.144020   0.668444 -0.215456 8.3109e-01    
+rel_time_factor::-41:treated  0.393384   1.123580  0.350117 7.2907e-01    
+rel_time_factor::-40:treated -0.468182   0.488847 -0.957728 3.4702e-01    
+rel_time_factor::-39:treated -0.272576   0.513013 -0.531325 5.9970e-01    
+rel_time_factor::-38:treated -0.616878   0.442391 -1.394418 1.7499e-01    
+rel_time_factor::-37:treated -0.008869   0.185161 -0.047901 9.6216e-01    
+rel_time_factor::-36:treated  1.453795   0.494602  2.939324 6.8160e-03 ** 
+rel_time_factor::-35:treated  3.498029   1.094159  3.197001 3.6296e-03 ** 
+rel_time_factor::-34:treated  1.644805   0.223253  7.367454 7.9966e-08 ***
+rel_time_factor::-33:treated  0.824726   0.132795  6.210517 1.4337e-06 ***
+rel_time_factor::-32:treated -0.215333   0.261952 -0.822033 4.1853e-01    
+rel_time_factor::-31:treated -0.700534   0.613567 -1.141740 2.6397e-01    
+rel_time_factor::-30:treated -0.674139   0.753563 -0.894603 3.7921e-01    
+rel_time_factor::-29:treated  0.197484   0.911173  0.216736 8.3011e-01    
+rel_time_factor::-28:treated -0.760047   0.485558 -1.565304 1.2960e-01    
+rel_time_factor::-27:treated -1.425845   0.834045 -1.709555 9.9259e-02 .  
+rel_time_factor::-26:treated -2.349158   1.384371 -1.696913 1.0165e-01    
+rel_time_factor::-25:treated -1.122994   0.726321 -1.546140 1.3416e-01    
+rel_time_factor::-24:treated -0.152437   0.562565 -0.270967 7.8856e-01    
+rel_time_factor::-23:treated  2.640362   0.439757  6.004140 2.4358e-06 ***
+rel_time_factor::-22:treated  1.285597   0.311281  4.130026 3.3282e-04 ***
+rel_time_factor::-21:treated  0.587077   0.179947  3.262496 3.0843e-03 ** 
+rel_time_factor::-20:treated -0.580528   0.272186 -2.132835 4.2546e-02 *  
+rel_time_factor::-19:treated -0.862425   0.361002 -2.388978 2.4441e-02 *  
+rel_time_factor::-18:treated -0.583525   0.777660 -0.750360 4.5977e-01    
+rel_time_factor::-17:treated -0.322946   1.178975 -0.273921 7.8631e-01    
+rel_time_factor::-16:treated -1.144747   0.588864 -1.943990 6.2793e-02 .  
+rel_time_factor::-15:treated -0.450138   0.588273 -0.765186 4.5105e-01    
+rel_time_factor::-14:treated -1.044743   0.448774 -2.327994 2.7962e-02 *  
+rel_time_factor::-13:treated -0.572681   0.422596 -1.355150 1.8703e-01    
+rel_time_factor::-12:treated  0.932886   0.266241  3.503913 1.6794e-03 ** 
+rel_time_factor::-11:treated  2.922360   0.663998  4.401161 1.6324e-04 ***
+rel_time_factor::-10:treated  1.530541   0.216127  7.081682 1.6076e-07 ***
+rel_time_factor::-9:treated   0.676266   0.227123  2.977532 6.2150e-03 ** 
+rel_time_factor::-8:treated  -0.625608   0.279105 -2.241474 3.3751e-02 *  
+rel_time_factor::-7:treated  -0.785182   0.532401 -1.474793 1.5228e-01    
+rel_time_factor::-6:treated  -0.688943   0.723276 -0.952532 3.4960e-01    
+rel_time_factor::-5:treated  -0.690677   0.904280 -0.763787 4.5187e-01    
+rel_time_factor::-4:treated  -1.152153   0.493774 -2.333360 2.7634e-02 *  
+rel_time_factor::-3:treated  -0.201795   0.466971 -0.432136 6.6921e-01    
+rel_time_factor::-2:treated  -1.186962   0.371084 -3.198631 3.6150e-03 ** 
+rel_time_factor::0:treated    1.524918   0.380303  4.009747 4.5577e-04 ***
+rel_time_factor::1:treated    3.250492   0.906624  3.585268 1.3650e-03 ** 
+rel_time_factor::2:treated    1.357169   0.709576  1.912647 6.6869e-02 .  
+rel_time_factor::3:treated    0.538811   0.296883  1.814895 8.1094e-02 .  
+rel_time_factor::4:treated   -0.680956   0.251920 -2.703067 1.1945e-02 *  
+rel_time_factor::5:treated   -0.981780   0.287838 -3.410883 2.1256e-03 ** 
+rel_time_factor::6:treated   -1.405862   0.610980 -2.300993 2.9663e-02 *  
+rel_time_factor::7:treated   -0.792120   0.718675 -1.102195 2.8048e-01    
+rel_time_factor::8:treated   -0.954583   0.458483 -2.082048 4.7321e-02 *  
+rel_time_factor::9:treated   -0.785578   0.318669 -2.465180 2.0615e-02 *  
+rel_time_factor::10:treated  -1.448365   0.566835 -2.555179 1.6811e-02 *  
+rel_time_factor::11:treated  -0.595352   0.408200 -1.458484 1.5668e-01    
+rel_time_factor::12:treated   0.313471   0.378585  0.828007 4.1520e-01    
+rel_time_factor::13:treated   3.236802   0.594993  5.440066 1.0561e-05 ***
+rel_time_factor::14:treated   1.334633   0.440794  3.027793 5.5009e-03 ** 
+rel_time_factor::15:treated   0.495528   0.401925  1.232886 2.2865e-01    
+rel_time_factor::16:treated  -0.352252   0.219508 -1.604732 1.2063e-01    
+rel_time_factor::17:treated  -1.266339   0.334907 -3.781165 8.2512e-04 ***
+rel_time_factor::18:treated  -1.367431   0.580873 -2.354096 2.6402e-02 *  
+rel_time_factor::19:treated  -0.988667   0.651997 -1.516368 1.4149e-01    
+rel_time_factor::20:treated  -0.834223   0.353172 -2.362088 2.5940e-02 *  
+rel_time_factor::21:treated  -0.556357   0.348737 -1.595348 1.2272e-01    
+rel_time_factor::22:treated  -1.178819   0.675446 -1.745245 9.2752e-02 .  
+rel_time_factor::23:treated  -0.109459   0.487392 -0.224580 8.2406e-01    
+rel_time_factor::24:treated   0.648605   0.581311  1.115763 2.7473e-01    
+rel_time_factor::25:treated   3.527030   0.802070  4.397409 1.6486e-04 ***
+rel_time_factor::26:treated   2.116940   0.178338 11.870360 5.3305e-12 ***
+rel_time_factor::27:treated   0.320909   0.331386  0.968386 3.4177e-01    
+rel_time_factor::28:treated  -0.639481   0.362133 -1.765873 8.9159e-02 .  
+rel_time_factor::29:treated  -1.213840   0.470109 -2.582039 1.5808e-02 *  
+rel_time_factor::30:treated  -0.914966   0.596197 -1.534671 1.3694e-01    
+rel_time_factor::31:treated  -0.296784   0.815032 -0.364137 7.1870e-01    
+rel_time_factor::32:treated  -0.853979   0.503969 -1.694508 1.0212e-01    
+rel_time_factor::33:treated  -0.046506   0.411387 -0.113047 9.1086e-01    
+Price                         0.003659   0.001678  2.180088 3.8495e-02 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 1.37664     Adj. R2: 0.983064
+                Within R2: 0.079874
+
+
+
+
+Event-Study: Neighbouring
+> summary(event_study_model_subset)
+OLS estimation, Dep. Var.: Electricity_Consumption
+Observations: 783
+Fixed-effects: Country: 9,  Date: 87
+Standard-errors: Clustered (Country) 
+                              Estimate Std. Error   t value   Pr(>|t|)    
+rel_time_factor::-53:treated -1.217041   2.762884 -0.440496 0.67123742    
+rel_time_factor::-52:treated -2.227288   3.032766 -0.734408 0.48366761    
+rel_time_factor::-51:treated -1.136946   2.785546 -0.408159 0.69386269    
+rel_time_factor::-50:treated -0.710573   0.843683 -0.842227 0.42412209    
+rel_time_factor::-49:treated  0.271562   0.287059  0.946015 0.37183416    
+rel_time_factor::-48:treated  0.956837   0.327701  2.919852 0.01929565 *  
+rel_time_factor::-47:treated  2.717264   1.073778  2.530565 0.03522446 *  
+rel_time_factor::-46:treated  1.659967   0.484190  3.428338 0.00897683 ** 
+rel_time_factor::-45:treated  1.048600   0.272859  3.843014 0.00492608 ** 
+rel_time_factor::-44:treated -0.099599   0.778767 -0.127893 0.90138985    
+rel_time_factor::-43:treated -1.309982   1.886811 -0.694284 0.50716151    
+rel_time_factor::-42:treated -1.322619   2.541285 -0.520453 0.61684099    
+rel_time_factor::-41:treated -1.310792   3.733642 -0.351076 0.73459772    
+rel_time_factor::-40:treated -1.533962   1.993841 -0.769351 0.46379245    
+rel_time_factor::-39:treated -0.929185   1.804447 -0.514942 0.62051564    
+rel_time_factor::-38:treated -1.168572   1.063200 -1.099109 0.30369341    
+rel_time_factor::-37:treated -0.312019   0.528351 -0.590552 0.57112255    
+rel_time_factor::-36:treated  1.206307   0.532385  2.265856 0.05323364 .  
+rel_time_factor::-35:treated  3.115086   1.264235  2.464009 0.03907372 *  
+rel_time_factor::-34:treated  1.665953   0.311356  5.350631 0.00068533 ***
+rel_time_factor::-33:treated  0.736192   0.153107  4.808348 0.00134116 ** 
+rel_time_factor::-32:treated -0.272331   0.554522 -0.491109 0.63653789    
+rel_time_factor::-31:treated -1.583692   1.942702 -0.815200 0.43855130    
+rel_time_factor::-30:treated -1.883051   2.457341 -0.766296 0.46550785    
+rel_time_factor::-29:treated -1.214449   2.906662 -0.417816 0.68707082    
+rel_time_factor::-28:treated -1.554589   1.818467 -0.854890 0.41747716    
+rel_time_factor::-27:treated -1.914252   1.722970 -1.111019 0.29883313    
+rel_time_factor::-26:treated -2.245900   1.594972 -1.408113 0.19675082    
+rel_time_factor::-25:treated -1.060243   0.875347 -1.211226 0.26037112    
+rel_time_factor::-24:treated -0.256793   0.707585 -0.362914 0.72607042    
+rel_time_factor::-23:treated  2.266967   0.491542  4.611951 0.00172826 ** 
+rel_time_factor::-22:treated  1.252264   0.412254  3.037605 0.01612187 *  
+rel_time_factor::-21:treated  0.478628   0.175204  2.731838 0.02577244 *  
+rel_time_factor::-20:treated -0.917243   0.971923 -0.943740 0.37292707    
+rel_time_factor::-19:treated -1.403066   1.273274 -1.101936 0.30253409    
+rel_time_factor::-18:treated -1.912824   2.649789 -0.721878 0.49092787    
+rel_time_factor::-17:treated -2.094844   3.689134 -0.567842 0.58572197    
+rel_time_factor::-16:treated -1.882938   1.918373 -0.981529 0.35507957    
+rel_time_factor::-15:treated -1.173565   1.986838 -0.590670 0.57104731    
+rel_time_factor::-14:treated -1.443125   1.033112 -1.396872 0.19998355    
+rel_time_factor::-13:treated -0.730515   0.626510 -1.166007 0.27719439    
+rel_time_factor::-12:treated  0.893487   0.287476  3.108044 0.01448829 *  
+rel_time_factor::-11:treated  2.791157   0.730047  3.823258 0.00506621 ** 
+rel_time_factor::-10:treated  1.613115   0.374478  4.307640 0.00258890 ** 
+rel_time_factor::-9:treated   0.619338   0.233972  2.647064 0.02938937 *  
+rel_time_factor::-8:treated  -0.758035   0.701726 -1.080243 0.31152087    
+rel_time_factor::-7:treated  -1.688258   2.019436 -0.836005 0.42741449    
+rel_time_factor::-6:treated  -1.960249   2.801649 -0.699677 0.50396230    
+rel_time_factor::-5:treated  -2.331943   3.402189 -0.685424 0.51244453    
+rel_time_factor::-4:treated  -1.939219   1.740777 -1.113996 0.29762770    
+rel_time_factor::-3:treated  -0.871802   1.608900 -0.541862 0.60267423    
+rel_time_factor::-2:treated  -1.393032   0.744003 -1.872348 0.09805249 .  
+rel_time_factor::0:treated    1.313173   0.451918  2.905776 0.01971633 *  
+rel_time_factor::1:treated    2.891541   1.084740  2.665653 0.02855406 *  
+rel_time_factor::2:treated    1.156587   0.705523  1.639333 0.13977549    
+rel_time_factor::3:treated    0.299384   0.334074  0.896161 0.39633140    
+rel_time_factor::4:treated   -0.699342   0.313313 -2.232089 0.05611381 .  
+rel_time_factor::5:treated   -1.455664   0.716210 -2.032456 0.07656496 .  
+rel_time_factor::6:treated   -2.765420   2.233246 -1.238296 0.25070944    
+rel_time_factor::7:treated   -2.087353   2.426753 -0.860142 0.41474250    
+rel_time_factor::8:treated   -1.981162   1.531609 -1.293517 0.23192846    
+rel_time_factor::9:treated   -1.277498   1.225541 -1.042395 0.32770214    
+rel_time_factor::10:treated  -1.774774   0.704571 -2.518943 0.03586775 *  
+rel_time_factor::11:treated  -0.834118   0.452583 -1.843017 0.10256966    
+rel_time_factor::12:treated   0.068749   0.529309  0.129884 0.89986425    
+rel_time_factor::13:treated   2.811194   0.674756  4.166239 0.00313824 ** 
+rel_time_factor::14:treated   1.210384   0.613970  1.971406 0.08416043 .  
+rel_time_factor::15:treated   0.319019   0.506772  0.629512 0.54656665    
+rel_time_factor::16:treated  -0.222571   0.220003 -1.011672 0.34131107    
+rel_time_factor::17:treated  -1.631787   1.007777 -1.619195 0.14406541    
+rel_time_factor::18:treated  -2.290983   1.852685 -1.236574 0.25131513    
+rel_time_factor::19:treated  -2.116937   2.536800 -0.834491 0.42821824    
+rel_time_factor::20:treated  -1.389396   1.159497 -1.198275 0.26510124    
+rel_time_factor::21:treated  -1.153105   1.118570 -1.030875 0.33275531    
+rel_time_factor::22:treated  -1.490551   0.823042 -1.811026 0.10772139    
+rel_time_factor::23:treated  -0.258291   0.581468 -0.444205 0.66866475    
+rel_time_factor::24:treated   0.521895   0.763599  0.683467 0.51361620    
+rel_time_factor::25:treated   3.229168   0.892851  3.616695 0.00681518 ** 
+rel_time_factor::26:treated   2.030691   0.308405  6.584499 0.00017215 ***
+rel_time_factor::27:treated   0.256670   0.459676  0.558371 0.59187078    
+rel_time_factor::28:treated  -0.724412   0.438469 -1.652139 0.13710908    
+rel_time_factor::29:treated  -1.766678   1.122311 -1.574142 0.15410149    
+rel_time_factor::30:treated  -2.325291   2.221645 -1.046653 0.32584987    
+rel_time_factor::31:treated  -1.877557   2.912404 -0.644676 0.53718053    
+rel_time_factor::32:treated  -1.885364   1.627209 -1.158649 0.28001434    
+rel_time_factor::33:treated  -0.875508   1.382721 -0.633178 0.54428873    
+Price                         0.001985   0.002671  0.742899 0.47878751    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 1.93471     Adj. R2: 0.96764 
+                Within R2: 0.118857
