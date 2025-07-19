@@ -1,6 +1,6 @@
 # Impact of AC standardisation Laws on Electricity Demand in the EU countries
 
-This repository contains the dataset, code, and output used in the analysis of the impact of air conditioner standardization laws on electricity demand, using evidence from similar policy implementations in Greece, Spain, and Italy.
+This repository contains the dataset, code, and output used in the analysis of the impact of air conditioner standardization laws on electricity demand in Greece, Spain, and Italy.
 
 ## Repository Structure
 
